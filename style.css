@@ -1,151 +1,129 @@
-/* Preloader */
-#preloader {
-  position: fixed;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background: #0a0a23 url('https://i.gifer.com/VAyR.gif') no-repeat center center;
-  background-size: 100px 100px;
-  z-index: 9999;
-}
-
-/* General */
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0a23;
   font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  height: 100vh;
+  overflow: hidden;
 }
 
-:root {
-  --bg-color: #0a0a23;
-  --text-color: #fff;
-}
-
-.light-mode {
-  --bg-color: #f5f5f5;
-  --text-color: #222;
-}
-
-header nav ul {
-  list-style: none;
+.main-container {
   display: flex;
   justify-content: center;
-  background-color: #12122d;
-  padding: 1em 0;
-  margin: 0;
-}
-
-header nav ul li {
-  margin: 0 15px;
-}
-
-header nav ul li a {
-  color: #bbb;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-header nav ul li a:hover {
-  color: #00f0ff;
-}
-
-#theme-toggle {
-  margin-left: 20px;
-  background: #00f0ff;
-  border: none;
-  padding: 0.5em 1em;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-/* Hero */
-.hero .container {
-  max-width: 1000px;
-  margin: 2em auto;
-  padding: 1em;
+  align-items: center;
+  height: 100%;
 }
 
 .card {
-  background-color: #1a1a40;
-  padding: 2em;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px #00f0ff;
-}
-
-.automation-level {
-  margin-top: 1em;
-}
-
-.level-bar {
-  background-color: #333;
-  width: 80%;
-  height: 10px;
-  margin: 0.5em auto;
-  border-radius: 5px;
-}
-
-.level-fill {
-  background: linear-gradient(to right, #00f0ff, #ff0080);
-  width: 80%;
-  height: 100%;
-  border-radius: 5px;
-  animation: fillGrow 2s ease-out forwards;
-}
-
-@keyframes fillGrow {
-  from { width: 0; }
-  to { width: 80%; }
+  width: 350px;
+  height: 600px;
+  background: url('https://i.imgur.com/JGW5p7n.png') no-repeat center center/cover;
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #00f0ff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .info {
-  margin-top: 2em;
+  background: rgba(10,10,35,0.7);
+  padding: 20px;
+  border-radius: 15px;
 }
 
-.section {
-  margin-bottom: 1.5em;
+h1 {
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
 }
 
-.section h3 {
+h2 {
+  font-size: 1.2em;
+  color: #a066ff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.level-title {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1em;
   color: #00f0ff;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.level-bar {
+  background: #333;
+  width: 80%;
+  height: 8px;
+  margin: 0 auto 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.level-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, #00f0ff, #ff0080);
+  animation: levelGrow 2s forwards;
 }
 
 .stats {
-  margin-top: 2em;
+  margin-top: 20px;
 }
 
 .stat {
-  margin: 1em 0;
+  margin: 10px 0;
+}
+
+.stat p {
+  color: #ccc;
+  margin-bottom: 5px;
 }
 
 .progress-bar {
-  background-color: #333;
-  width: 80%;
-  height: 10px;
-  margin: 0.5em auto;
+  background: #333;
+  width: 100%;
+  height: 6px;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .progress {
   height: 100%;
-  border-radius: 5px;
   background: #00f0ff;
-  animation: fillProgress 2s ease-out forwards;
+  width: 0;
+  animation: fillProgress 2s forwards;
 }
 
-.speed { width: 70%; }
-.accuracy { width: 80%; }
-.coverage { width: 90%; }
+.speed {
+  animation-delay: 0.5s;
+  width: 70%;
+}
+
+.accuracy {
+  animation-delay: 1s;
+  width: 80%;
+}
+
+.coverage {
+  animation-delay: 1.5s;
+  width: 90%;
+}
+
+@keyframes levelGrow {
+  from { width: 0; }
+  to { width: 80%; }
+}
 
 @keyframes fillProgress {
-  from { width: 0; }
-  to { width: inherit; }
+  0% { width: 0; }
+  100% { width: inherit; }
 }
