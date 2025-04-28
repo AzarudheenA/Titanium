@@ -1,0 +1,151 @@
+/* Preloader */
+#preloader {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: #0a0a23 url('https://i.gifer.com/VAyR.gif') no-repeat center center;
+  background-size: 100px 100px;
+  z-index: 9999;
+}
+
+/* General */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+:root {
+  --bg-color: #0a0a23;
+  --text-color: #fff;
+}
+
+.light-mode {
+  --bg-color: #f5f5f5;
+  --text-color: #222;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: #12122d;
+  padding: 1em 0;
+  margin: 0;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header nav ul li a:hover {
+  color: #00f0ff;
+}
+
+#theme-toggle {
+  margin-left: 20px;
+  background: #00f0ff;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Hero */
+.hero .container {
+  max-width: 1000px;
+  margin: 2em auto;
+  padding: 1em;
+}
+
+.card {
+  background-color: #1a1a40;
+  padding: 2em;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+.automation-level {
+  margin-top: 1em;
+}
+
+.level-bar {
+  background-color: #333;
+  width: 80%;
+  height: 10px;
+  margin: 0.5em auto;
+  border-radius: 5px;
+}
+
+.level-fill {
+  background: linear-gradient(to right, #00f0ff, #ff0080);
+  width: 80%;
+  height: 100%;
+  border-radius: 5px;
+  animation: fillGrow 2s ease-out forwards;
+}
+
+@keyframes fillGrow {
+  from { width: 0; }
+  to { width: 80%; }
+}
+
+.info {
+  margin-top: 2em;
+}
+
+.section {
+  margin-bottom: 1.5em;
+}
+
+.section h3 {
+  color: #00f0ff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.stats {
+  margin-top: 2em;
+}
+
+.stat {
+  margin: 1em 0;
+}
+
+.progress-bar {
+  background-color: #333;
+  width: 80%;
+  height: 10px;
+  margin: 0.5em auto;
+  border-radius: 5px;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 5px;
+  background: #00f0ff;
+  animation: fillProgress 2s ease-out forwards;
+}
+
+.speed { width: 70%; }
+.accuracy { width: 80%; }
+.coverage { width: 90%; }
+
+@keyframes fillProgress {
+  from { width: 0; }
+  to { width: inherit; }
+}
